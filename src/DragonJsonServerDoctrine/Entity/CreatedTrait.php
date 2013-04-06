@@ -27,4 +27,17 @@ trait CreatedTrait
 	{
 		return $this->created;
 	}
+	
+	/**
+	 * Gibt den Zeitpunkt der Erstellung als Unix Timestamp zurück
+	 * @return \DateTime
+	 */
+	public function getCreatedTimestamp()
+	{
+		$created = $this->getCreated();
+		if (null === $created) {
+			return;
+		}
+		return $created->getTimestamp();
+	}
 }

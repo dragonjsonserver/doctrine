@@ -27,4 +27,17 @@ trait ModifiedTrait
 	{
 		return $this->modified;
 	}
+	
+	/**
+	 * Gibt den Zeitpunkt der letzten Änderung als Unix Timestamp zurück
+	 * @return \DateTime
+	 */
+	public function getModifiedTimestamp()
+	{
+		$modified = $this->getModified();
+		if (null === $modified) {
+			return;
+		}
+		return $modified->getTimestamp();
+	}
 }
