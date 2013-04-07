@@ -1,6 +1,6 @@
 {
     "name": "dragonprojects/dragonjsonserverdoctrine",
-    "description": "Extension for DragonJsonServer to use Doctrine 2",
+    "description": "Erweiterung für den DragonJsonServer zur Nutzung von Doctrine 2",
     "license": "BSD-3-Clause",
     "authors": [
         {
