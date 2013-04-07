@@ -10,4 +10,10 @@
 /**
  * @return array
  */
-return [];
+return [
+	'service_manager' => [
+		'invokables' => [
+            'Doctrine' => '\DragonJsonServerDoctrine\Service\Doctrine',
+		],
+	],
+];
