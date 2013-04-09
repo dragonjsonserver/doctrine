@@ -14,6 +14,9 @@ namespace DragonJsonServerDoctrine\Service;
  */
 class Doctrine
 {
+    use \DragonJsonServer\ServiceManagerTrait;
+	use \DragonJsonServerDoctrine\EntityManagerTrait;
+	
     /**
 	 * Formatiert die einzelnen Entites in der Liste für die Ausgabe
 	 * @param array $entities
@@ -26,5 +29,24 @@ class Doctrine
 		} 
 		unset($entity);
 		return $entities;
+	}
+	
+	/**
+	 * Kapselt den übergebenen Aufruf in eine Transaktion
+	 * @param callback $callback
+	 */
+	public function transactional($callback) 
+	{
+		$entityManager = $this->getEntityManager();
+		$entityManager->beginTransaction();
+		try {
+			$return = call_user_func($callback, $entityManager);
+			$entityManager->commit();
+			return $return;
+		} catch (\Exception $exception) {
+			$entityManager->clear();
+			$entityManager->rollback();
+			throw $exception;
+		}
 	}
 }
