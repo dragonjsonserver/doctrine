@@ -10,7 +10,7 @@
 namespace DragonJsonServerDoctrine\Entity;
 
 /**
- * Trait für das Attributes mit dem Zeitpunkt der Erstellung
+ * Trait für das Attribut mit dem Zeitpunkt der Erstellung
  */
 trait CreatedTrait
 {

@@ -10,7 +10,7 @@
 namespace DragonJsonServerDoctrine\Entity;
 
 /**
- * Trait für das Attributes mit dem Zeitpunkt der letzten Änderung
+ * Trait für das Attribut mit dem Zeitpunkt der letzten Änderung
  */
 trait ModifiedTrait
 {
