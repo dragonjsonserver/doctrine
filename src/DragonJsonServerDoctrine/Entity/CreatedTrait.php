@@ -30,7 +30,7 @@ trait CreatedTrait
 	
 	/**
 	 * Gibt den Zeitpunkt der Erstellung als Unix Timestamp zurück
-	 * @return \DateTime
+	 * @return integer
 	 */
 	public function getCreatedTimestamp()
 	{

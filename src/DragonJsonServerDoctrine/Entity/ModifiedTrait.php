@@ -30,7 +30,7 @@ trait ModifiedTrait
 	
 	/**
 	 * Gibt den Zeitpunkt der letzten Änderung als Unix Timestamp zurück
-	 * @return \DateTime
+	 * @return integer
 	 */
 	public function getModifiedTimestamp()
 	{
