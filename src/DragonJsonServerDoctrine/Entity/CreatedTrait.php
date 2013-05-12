@@ -18,6 +18,28 @@ trait CreatedTrait
 	 * @Doctrine\ORM\Mapping\Column(type="datetime")
 	 **/
 	protected $created;
+
+    /**
+     * Setzt den Zeitpunkt der Erstellung
+     * @param \DateTime $created
+     * @return CreatedTrait
+     */
+    protected function setCreated(\DateTime $created)
+    {
+    	$this->created = $created;
+        return $this;
+    }
+
+    /**
+     * Setzt den Zeitpunkt der Erstellung als Unix Timestamp
+     * @param integer $created
+     * @return CreatedTrait
+     */
+    protected function setCreatedTimestamp($created)
+    {
+        $this->setCreated((new \DateTime())->setTimestamp($created));
+        return $this;
+    }
 	
 	/**
 	 * Gibt den Zeitpunkt der Erstellung zurück

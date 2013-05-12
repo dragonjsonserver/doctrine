@@ -18,6 +18,28 @@ trait ModifiedTrait
 	 * @Doctrine\ORM\Mapping\Column(type="datetime")
 	 **/
 	protected $modified;
+
+    /**
+     * Setzt den Zeitpunkt der letzten Änderung
+     * @param \DateTime $modified
+     * @return ModifiedTrait
+     */
+    protected function setModified(\DateTime $modified)
+    {
+    	$this->modified = $modified;
+        return $this;
+    }
+
+    /**
+     * Setzt den Zeitpunkt der letzten Änderung als Unix Timestamp
+     * @param integer $modified
+     * @return ModifiedTrait
+     */
+    protected function setModifiedTimestamp($modified)
+    {
+        $this->setModified((new \DateTime())->setTimestamp($modified));
+        return $this;
+    }
 	
 	/**
 	 * Gibt den Zeitpunkt der letzten Änderung zurück

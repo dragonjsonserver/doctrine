@@ -18,6 +18,21 @@ class Doctrine
 	use \DragonJsonServerDoctrine\EntityManagerTrait;
 	
     /**
+	 * Erstellt die Entities mit der übergebenen Liste von Daten
+	 * @param array $entities
+	 * @return array
+	 */
+	public function fromArray(array $entities)
+	{
+		foreach ($entities as &$entity) {
+			$classname = $entity['__className'];
+			$entity = (new $classname())->fromArray($entity);
+		} 
+		unset($entity);
+		return $entities;
+	}
+	
+    /**
 	 * Formatiert die einzelnen Entites in der Liste für die Ausgabe
 	 * @param array $entities
 	 * @return array
