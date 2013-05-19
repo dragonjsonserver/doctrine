@@ -13,7 +13,7 @@
 return [
 	'service_manager' => [
 		'invokables' => [
-            'Doctrine' => '\DragonJsonServerDoctrine\Service\Doctrine',
+            '\DragonJsonServerDoctrine\Service\Doctrine' => '\DragonJsonServerDoctrine\Service\Doctrine',
 		],
 	],
 ];
