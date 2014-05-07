@@ -17,7 +17,7 @@ return [
                 'params' => [
                     'host' => '%host%',
                     'port' => '%port%',
-                    'user' => '%port%',
+                    'user' => '%user%',
                     'password' => '%password%',
                     'dbname' => '%dbname%',
                 ],
